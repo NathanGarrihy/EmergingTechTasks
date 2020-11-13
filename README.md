@@ -39,9 +39,6 @@ My sqrt2 function appropriately returns an accurate figure for the square root o
 *Square Root Graph*
 [sqrtGraph](https://dr282zn36sxxg.cloudfront.net/datastreams/f-d%3A8c5c6810c1b36f67c852caebac576cca1ae2d3f6ad6981b8453f350d%2BIMAGE_TINY%2BIMAGE_TINY.1)
 <br/>
-*Square root calculated*
-[sqrt2java](https://…/3DTest.png)
-<br/>
 *Python Bitwise operators*
 [operators](https://wiki.python.org/moin/BitwiseOperators)
 [operators2](https://www.tutorialspoint.com/python/bitwise_operators_example.html)
