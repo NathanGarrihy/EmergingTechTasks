@@ -26,7 +26,7 @@ My first algorithm did the following:
 This method worked but however it only returned a value as far as 52 decimal places and thus, I had to go back to the drawing board and come up with a different approach to this problem. After further research I implemented the following:
 1. I got the decimal value of 2*google, then I put that googol to the power of 2 in order to move the numbers to the left hand side of the decimal place so that I can output it. [Googol](https://stackoverflow.com/questions/34150400/how-to-enter-a-googol-in-python). I had first tried using the googol value, blue I soon realized that this didn't return the number I was looking for.
 2. I then created a while loop which ran until the 'a' value was equal to the 'b' value. This first populates a with b, then uses b to make a guess at the square root of 2 by getting a floor division to receive the integers we want and not unwanted decimal format and then bit shifting the number by 1 place to the right. Bit shifts simply move the number to the right by a specified number of spaces. By doing this, we will run the while loop until we receive the same guess twice consecutively. Then you exit the while loop with the correct value for the square root of 2 (without the decimal place).
-3. Get the value of the numbers to the right of the decimal place by taking (b- 10 to the power of 100) After this I simply return '1.%d' number 1 in int form followed by the finalVal which are all the numbers to the right of the decimal place
+3. Get the value of the numbers to the right of the decimal place by taking (b- 10 to the power of 100) After this I simply return '1.%d' number 1 in int form followed by the finalVal which are all the numbers to the right of the decimal place.
 
 ## Conclusion
 My sqrt2 function appropriately returns an accurate figure for the square root of 2 which is what I was tasked to do. There is potential for re-use as you could easily implement a sqrt() function that returns square root of many numbers, I've even included a possible implementation of this as a comment near the bottom of my function. All and all this project improved my mathematical skill as well as my python programming skills. I tried to avoid returning this value as a string and I succeeded in this which I was quite happy with in the end.
@@ -75,11 +75,44 @@ The null hypothesis of the table we were given stated that "each person's neighb
 [chi2contingency](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html)
 <br/>
 *Python 2D Arrays*
-[2DArrPython](https://www.tutorialspoint.com/python_data_structure/python_2darray.htm)
+[2DArrPython](https://www.tutorialspoint.com/python_data_structure/python_2darray.html)
 <br/>
 *Chi Square wiki*
 [ChiSquareWiki](https://en.wikipedia.org/w/index.php?title=Chi-squared_test&oldid=983024096)
 <br/>
 *The Chi Square Test*
 [ChiSquareTest](https://www.bmj.com/about-bmj/resources-readers/publications/statistics-square-one/8-chi-squared-tests)
+<br/>
+
+# Research STDEV.P and STDEV.S excel functions and demonstrate their functionality and the differences between them
+### Standard deviation in excel
+
+## Introduction
+As part of our Emerging Technologies module in Final Year my next task was:
+- Research these excel functions, writing a markdown note on the differences between them.
+- use numpy to perform a simulation demonstrating that the STDEV.S calculation is a better estimate for the standard deviation
+<br/>
+This task shouldn't be too difficult as I did a lot of standard deviation work a few years ago for Leaving Certificate and I can apply what I know to this task.
+
+## Research
+I first looked into documentation for the 2 excel functions in question and I found that microsoft's documentation was fantastic. The [STDEV.S function's documentation](https://support.microsoft.com/en-us/office/stdev-s-function-7d69cf97-0c1f-4acf-be27-f3e83904cc23) taught me how excel's stev.s function calculates the standard deviation based on a sample and the [STEV.P function's documentation](https://support.microsoft.com/en-us/office/stdev-p-function-6e917c05-31a0-496f-ade7-4f4e7462f285) showed how this function calculates the standard deviation based on the entire population given as arguments.
+
+## Development
+I created a list of numbers from 0 - 20 stepping up in increments of 2 as the sample data set. I used numpy to output the sample and population deviation of this list of numbers by dividing by n for population deviation and dividing by n-1 for sample standard deviation.
+
+## Conclusion
+The population standard deviation is good when we are fully sure we have the full data set. The sample standard deviation is good when we have a sample of a larger population and want to find an accurate estimate for what the overall standard deviation is. The sample standard deviation will be the most common as we rarely find fully complete data sets in the real world therefore I feel that sample standard deviation would be more commonly used in real world scenarios, particularly in computing.
+
+## References
+*stdev.s documentation*
+[stdev.s documentation](https://support.microsoft.com/en-us/office/stdev-s-function-7d69cf97-0c1f-4acf-be27-f3e83904cc23)
+<br/>
+*stdev.p documentation*
+[stdev.p documentation](https://support.microsoft.com/en-us/office/stdev-p-function-6e917c05-31a0-496f-ade7-4f4e7462f285)
+<br/>
+*Standard deviation*
+[Standard deviation](https://statistics.laerd.com/statistical-guides/measures-of-spread-standard-deviation.php)
+<br/>
+*Standard deviation 2*
+[Standard deviation 2](http://mathbitsnotebook.com/Algebra1/StatisticsData/STPopSample.html)
 <br/>
