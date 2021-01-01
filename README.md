@@ -20,14 +20,14 @@ As part of our Emerging Technologies module in Final Year we were assigned this 
 This is an interesting task as finding a square root in code is made quite simple through libraries e.g. [Math.sqrt Method](https://www.geeksforgeeks.org/java-sqrt-method-examples/) but thinking of my own algorithm to find the square root of 2 will be challenging and I feel some research will be required before I can develop an accurate square root of 2 to 100 decimal places.
 
 ## Research
-I first got an idea of what the square root of 2 actually was, so I calculated this by using Java's Math package, just to get a guage of what I'm aiming for (as seen in references). A square root graph also gave a good depiction of what to expect, I've placed the one I used in the references section. I could tell from all this that I could expect the answer to be around **1.4142135623730950488016887242096980785696718753769480731766797379907324784621**. I found a useful resource on [Medium.com](https://medium.com/@surajregmi/how-to-calculate-the-square-root-of-a-number-newton-raphson-method-f8007714f64/) which explained how to calculate the square root of a number using the newton raphson method where you:<br/>
-While this first algorithm worked, it only returned 52 decimal palces and I had to conduct further research to improve my algorithm.
-Since I couldn't format the number to print out to 2 decimal places I decided it'd be better to just get the decimal values as a whole number. This allows me to achieve 100 decimal places.
+I first got an idea of what the square root of 2 was, so I calculated this by using Java's Math package, just to get a guage of what I'm aiming for (as seen in references). A square root graph also gave a good depiction of what to expect, I've placed the one I used in the references section. I could tell from all this that I could expect the answer to be around **1.4142135623730950488016887242096980785696718753769480731766797379907324784621**. I found a useful resource on [Medium.com](https://medium.com/@surajregmi/how-to-calculate-the-square-root-of-a-number-newton-raphson-method-f8007714f64/) which explained how to calculate the square root of a number using the newton raphson method where you:<br/>
+While this first algorithm worked, it only returned 52 decimal places and I had to conduct further research to improve my algorithm.
+Since I couldn't format the number to print out to 2 decimal places, I decided it'd be better to just get the decimal values as a whole number. This allows me to achieve 100 decimal places.
 I found that a googol value is 1 followed by 100 zeros, which is perfect as that's how many decimal places I required.
 
 ## Development
 My first algorithm did the following:
-1. Take a reasonable guess(approximate root for the square root.
+1. Take a reasonable guess (approximate root for the square root.
 2. Add the approximate root with the original number divided by the approximate root and divide by 2.
  **x_i := (x_i + n / x_i) / 2 **
 3. Continue step 2 until the difference in the approximate root along the iterations is less than the desired value (or precision value).
@@ -80,7 +80,7 @@ I first imported the scipy.stats module as requested and then created 3 array's 
 I then populate V, p, dof and expected values by calling the calling the stats.chi2.contingency function on my 2-dimensional array, this function does all the work and populates the variables with the relevant values. I then output these values to the screen in a user-friendly format and added my own evaluation in the markdown cell below the code.
 
 ## Conclusion
-The null hypothesis of the table we were given stated that "each person's neighbourhood of residence is independent of the person's occupational classification". My chi squared test came back with a p value which was less than .001, this is lower than the significance level and thus leads me to reject the hypothesis. This was somewhat predictable as there a visable corrolation between neighborhood of residence and occupational classification. The most confusing part of this project for me was understanding what exactly the chi square test was doing and understanding what the values meant for my conclusion. Thankfully with enough research I believe I was able to grasp a proper understanding of everything.
+The null hypothesis of the table we were given stated that "each person's neighbourhood of residence is independent of the person's occupational classification". My chi squared test came back with a p value which was less than .001, this is lower than the significance level and thus leads me to reject the hypothesis. This was somewhat predictable as there a visible correlation between neighbourhood of residence and occupational classification. The most confusing part of this project for me was understanding what exactly the chi square test was doing and understanding what the values meant for my conclusion. Thankfully with enough research I believe I was able to grasp a proper understanding of everything.
 
 ## References
 *stats.chi2.contingency*
@@ -115,7 +115,7 @@ I first looked into documentation for the 2 excel functions in question and I fo
 I created a list of numbers from 0 - 20 stepping up in increments of 2 as the sample data set. I used numpy to output the sample and population deviation of this list of numbers by dividing by n for population deviation and dividing by n-1 for sample standard deviation.
 
 ## Conclusion
-The population standard deviation is good when we are fully sure we have the full data set. The sample standard deviation is good when we have a sample of a larger population and want to find an accurate estimate for what the overall standard deviation is. The sample standard deviation will be the most common as we rarely find fully complete data sets in the real world therefore I feel that sample standard deviation would be more commonly used in real world scenarios, particularly in computing.
+The population standard deviation is good when we are fully sure we have the full data set. The sample standard deviation is good when we have a sample of a larger population and want to find an accurate estimate for what the overall standard deviation is. The sample standard deviation will be the most common as we rarely find fully complete data sets in the real world therefore, I feel that sample standard deviation would be more commonly used in real world scenarios, particularly in computing.
 
 ## References
 *stdev.s documentation*
@@ -138,7 +138,7 @@ The population standard deviation is good when we are fully sure we have the ful
 
 ## Introduction
 My next task was:
-- Apply K Neirest Neighbour clustering to Fisher's Iris dataset.
+- Apply K Nearest Neighbour clustering to Fisher's Iris dataset.
 - explain how the code works and how accurate it might be
 - explain how my model can be used to make predictions of species of iris
 <br/>
@@ -146,14 +146,14 @@ My next task was:
 ## Research
 I had a look through scikit-learn's documentation before doing anything and found it had a function specifically designed for importing the iris dataset. I then had a look at [scikit-learn's documentation for Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html), which was very insightful and thought me all I really needed to know about nearest neighbors and which sci-kit functions would be best for completing the task at hand. This post on [TowardsDataScience.com](https://towardsdatascience.com/knn-using-scikit-learn-c6bed765be75) provided me with a good foundation for this task it showed me how to get the data I needed and with the knowledge I had acquired I knew that all I really had to do from here was display this clustered data in a way that it can be used to make predictions of species of iris. According to a post on [BecomingHuman.Ai](https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d#:~:text=There%20are%20a%20ton%20of,data%20scientists%20do%20the%20wizardry.&text=The%20'K'%20in%20K%2D,learning%20algorithm%20used%20for%20classification.) as well as other sources, knn is a supervised learning algorithm used for classification. Meanwhile kmeans is unsupervised and used for classification. Therefore I found that Nearest Neighbour classification would be a good way of using knn to make these predictions.
 ## Development
-I first created an object containing the data from the load_iris method which I called from sklearn's datasets module. I then plotted the decision boundry, assigning a colour to each point in the mesh before creating a scatter plot of this data similar to one I found on [sci-kit load_iris](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html). This plot gave an indication of the start of how we can make predictions of iris species, it also showed me that the data had been imported correctly, which is crucial. <br/>
+I first created an object containing the data from the load_iris method which I called from sklearn's datasets module. I then plotted the decision boundary, assigning a colour to each point in the mesh before creating a scatter plot of this data similar to one I found on [sci-kit load_iris](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html). This plot gave an indication of the start of how we can make predictions of iris species, it also showed me that the data had been imported correctly, which is crucial. <br/>
 Next, I split the data into training and test sets as this will lead to a better estimate on how well the model is likely to perform on unseen data.
 Then, I used sklearn neighbor's KNeighborsClassifier class in order to find an optimal value for K in Knn by checking the relationship between K and the testing accuracy. After this, I set the value for K in knn to 5 as this is the value I will use for my Classification plot.<br/>
-Finally, I used this clustered data to create a classification plot with uniform weights. I made sure to just take the first two features from the iris dataset this time as thats all thats needed to create a classification plot. I created color maps for the plot and plotted the decision boundry via assigning a colour to each point in the mesh.
+Finally, I used this clustered data to create a classification plot with uniform weights. I made sure to just take the first two features from the iris dataset this time as that's all that's needed to create a classification plot. I created color maps for the plot and plotted the decision boundary via assigning a colour to each point in the mesh.
 After this, I created an instance of K Neihbours classifier and fit the data. This result then gets put into a colour plot and finally we also plot the training points before adding appropriate labels and displaying the end plot.
 
 ## Conclusion
-The task was to use scikit-learn to apply clustering to the iris data set using Knn. K Nearest neighbour is used for classification and I feel that the model that I have created is sufficient to make predictions on species of iris. sklearn provided a lot of functions that were well documented and provided me with a good blueprint to complete this assignment.
+The task was to use scikit-learn to apply clustering to the iris data set using Knn. K Nearest neighbour is used for classification and I feel that the model that I have created is enough to make predictions on species of iris. sklearn provided a lot of functions that were well documented and provided me with a good blueprint to complete this assignment.
 
 ## References
 *Scikit load iris documentation*
