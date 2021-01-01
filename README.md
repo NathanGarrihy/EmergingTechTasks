@@ -1,13 +1,23 @@
 # Emerging Technology Tasks
+# How to run this jupyter notebook (windows)
+1. [Download and install jupyter notebook](https://jupyter.org/install)
+2. Download or clone this repository
+3. Open the command line in the destination of the repository file
+4. Type "jupyter notebook" into cmd then click on "EmergingTechTasks.ipynb" once the http://localhost:8888/tree webpage opens
+5. To run the code, click on the code cell and press shift+enter
+For each task, I suggest working through the code from top to bottom in order to avoid conflicts with imports.
+<br/>
+---
 # Sqrt2
 ### Square root of 2 in Python
+---
 ## Introduction
 As part of our Emerging Technologies module in Final Year we were assigned this task:
 - Write a Python function called sqrt2 that calculates and prints to the screen the square root of 2 to 100 decimal places. 
 - Your code should not depend on any module from the standard library or otherwise. 
 - You should research the task first and include references and a description of your algorithm.
 <br/>
-This is an interesting task as finding a square root in code is made quite simple through libraries e.g. [Java.lang.Math.sqrt()Method](https://www.geeksforgeeks.org/java-sqrt-method-examples/) but thinking of my own algorithm to find the square root of 2 will be challenging and I feel some research will be required before I can develop an accurate square root of 2 to 100 decimal places.
+This is an interesting task as finding a square root in code is made quite simple through libraries e.g. [Java.lang.Math.sqrt Method](https://www.geeksforgeeks.org/java-sqrt-method-examples/) but thinking of my own algorithm to find the square root of 2 will be challenging and I feel some research will be required before I can develop an accurate square root of 2 to 100 decimal places.
 
 ## Research
 I first got an idea of what the square root of 2 actually was, so I calculated this by using Java's Math package, just to get a guage of what I'm aiming for (as seen in references). A square root graph also gave a good depiction of what to expect, I've placed the one I used in the references section. I could tell from all this that I could expect the answer to be around **1.4142135623730950488016887242096980785696718753769480731766797379907324784621**. I found a useful resource on [Medium.com](https://medium.com/@surajregmi/how-to-calculate-the-square-root-of-a-number-newton-raphson-method-f8007714f64/) which explained how to calculate the square root of a number using the newton raphson method where you:<br/>
@@ -50,11 +60,13 @@ My sqrt2 function appropriately returns an accurate figure for the square root o
 [nasa](https://apod.nasa.gov/htmltest/gifcity/sqrt2.1mil)
 <br/>
 
+---
 # Using scipy.stats to verify this value of a given table and calculate the associated p value
 ### Chi squared testing in python
+---
 
 ## Introduction
-As part of our Emerging Technologies module in Final Year my next task was:
+My next task was:
 - Use scipy.stats to verify this value and calculate the associated p value.
 - Include a short note with references justifying your analysis in a markdown cell.
 <br/>
@@ -84,11 +96,13 @@ The null hypothesis of the table we were given stated that "each person's neighb
 [ChiSquareTest](https://www.bmj.com/about-bmj/resources-readers/publications/statistics-square-one/8-chi-squared-tests)
 <br/>
 
+---
 # Research STDEV.P and STDEV.S excel functions and demonstrate their functionality and the differences between them
 ### Standard deviation in excel
+---
 
 ## Introduction
-As part of our Emerging Technologies module in Final Year my next task was:
+My next task was:
 - Research these excel functions, writing a markdown note on the differences between them.
 - use numpy to perform a simulation demonstrating that the STDEV.S calculation is a better estimate for the standard deviation
 <br/>
@@ -115,4 +129,39 @@ The population standard deviation is good when we are fully sure we have the ful
 <br/>
 *Standard deviation 2*
 [Standard deviation 2](http://mathbitsnotebook.com/Algebra1/StatisticsData/STPopSample.html)
+<br/>
+
+---
+# Use scikit-learn to apply kNN clustering to Fisher’s famous Iris data set
+### Scikit-learn Nearest Neighbors
+---
+
+## Introduction
+My next task was:
+- Apply K Neirest Neighbour clustering to Fisher's Iris dataset.
+- explain how the code works and how accurate it might be
+- explain how my model can be used to make predictions of species of iris
+<br/>
+
+## Research
+I had a look through scikit-learn's documentation before doing anything and found it had a function specifically designed for importing the iris dataset. I then had a look at [scikit-learn's documentation for Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html), which was very insightful and thought me all I really needed to know about nearest neighbors and which sci-kit functions would be best for completing the task at hand. This post on [TowardsDataScience.com](https://towardsdatascience.com/knn-using-scikit-learn-c6bed765be75) provided me with a good foundation for this task it showed me how to get the data I needed and with the knowledge I had acquired I knew that all I really had to do from here was display this clustered data in a way that it can be used to make predictions of species of iris. According to a post on [BecomingHuman.Ai](https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d#:~:text=There%20are%20a%20ton%20of,data%20scientists%20do%20the%20wizardry.&text=The%20'K'%20in%20K%2D,learning%20algorithm%20used%20for%20classification.) as well as other sources, knn is a supervised learning algorithm used for classification. Meanwhile kmeans is unsupervised and used for classification. Therefore I found that Nearest Neighbour classification would be a good way of using knn to make these predictions.
+## Development
+I first created an object containing the data from the load_iris method which I called from sklearn's datasets module. I then plotted the decision boundry, assigning a colour to each point in the mesh before creating a scatter plot of this data similar to one I found on [sci-kit load_iris](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html). This plot gave an indication of the start of how we can make predictions of iris species, it also showed me that the data had been imported correctly, which is crucial. <br/>
+Next, I split the data into training and test sets as this will lead to a better estimate on how well the model is likely to perform on unseen data.
+Then, I used sklearn neighbor's KNeighborsClassifier class in order to find an optimal value for K in Knn by checking the relationship between K and the testing accuracy. After this, I set the value for K in knn to 5 as this is the value I will use for my Classification plot.<br/>
+Finally, I used this clustered data to create a classification plot with uniform weights. I made sure to just take the first two features from the iris dataset this time as thats all thats needed to create a classification plot. I created color maps for the plot and plotted the decision boundry via assigning a colour to each point in the mesh.
+After this, I created an instance of K Neihbours classifier and fit the data. This result then gets put into a colour plot and finally we also plot the training points before adding appropriate labels and displaying the end plot.
+
+## Conclusion
+The task was to use scikit-learn to apply clustering to the iris data set using Knn. K Nearest neighbour is used for classification and I feel that the model that I have created is sufficient to make predictions on species of iris. sklearn provided a lot of functions that were well documented and provided me with a good blueprint to complete this assignment.
+
+## References
+*Scikit load iris documentation*
+[Scikit load iris documentation]( https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html)
+<br/>
+*iris dataset plot*
+[iris dataset plot]( https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
+<br/>
+*KNeighborsClassifier*
+[KNeighborsClassifier](https://ogrisel.github.io/scikit-learn.org/sklearn-tutorial/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
 <br/>
